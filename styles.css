@@ -93,3 +93,41 @@ h1 {
 .current-weather h2 {
     font-size: 1.7rem;
 }
+.weather-data h4 {
+    margin-top: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.current-weather .icon {
+    text-align: center;
+}
+
+.current-weather .icon img {
+    max-width: 120px;
+    margin-top: -15px;
+}
+
+.current-weather .icon h4 {
+    margin-top: -10px;
+    text-transform: capitalize;
+}
+
+.days-forcast h2 {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+.weather-cards {
+    display: flex;
+    gap: 20px;
+}
+
+.weather-cards .card {
+    list-style: none;
+    color: #fff;
+    padding: 18px 16px;
+    background: #6c757d;
+    border-radius: 5px;
+    width: calc(100% / 5);
+}
