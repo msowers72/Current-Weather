@@ -22,7 +22,6 @@ And: Enter the name of the city you want to know the weather in
 Then: The application loads the 5-day weather in the requested city
 Given: I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
 
-Scenario: I click on the city search history
-Results: I am agin presented with curren and future conditions for that city
+
 ```
 ![06-server-side-apis-homework-demo](https://user-images.githubusercontent.com/80433477/123529116-606e4580-d6bb-11eb-98d0-97aaae8ae23f.png)
