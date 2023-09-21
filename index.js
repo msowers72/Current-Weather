@@ -8,6 +8,16 @@ const currentWeatherDiv = document.querySelector(".current-weather")
 
 const API_KEY = "0c6c7c6766f0c82e84b46a07f2439d14"; //  OpenWeatherMap API key
 
+const createWeatherCard = (weatherItem) => {
+    return ` <li class="card">
+                <h3>(${weatherItem.dt_txt.split(" ")[0]})</h3>
+                <img src="https://openweathermap.org/img/wn/${weatherItem.weather[0].icon}@2x.png" alt="weather-icon">
+                <h4>Temp: ${(((weatherItem.main.temp - 273.15) * 1.8) + 32).toFixed(2)}°F</h4>
+                <h4>Wind: ${weatherItem.wind.speed} M/S</h4>
+                <h4>Humidity: ${weatherItem.main.humidity}%</h4>
+            </li> `;
+}
+
 const getWeatherDetails = (cityName, lat, lon) => {
     const Weather_API_URL = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}`
 
@@ -24,8 +34,10 @@ const getWeatherDetails = (cityName, lat, lon) => {
             }
         })
         console.log(fiveDaysForecast)
+        // adding weather cards to page
         fiveDaysForecast.forEach(weatherItem => {
-            createWeatherCard();
+            weatherCardsDiv.insertAdjacentHTML('beforeend', createWeatherCard(weatherItem))
+            
         })
     }).catch(() => {
         alert("An error occured while fetchig the weather forcast!")
